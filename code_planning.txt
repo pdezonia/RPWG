@@ -1,0 +1,40 @@
+Code planning for Random Pronounceable Word Generator
+-------------------------------------------------------------------------------
+
+function name
+ takes:
+ gives:
+
+main:
+ takes: input from user specifying approximate word length and language
+  	style
+ gives: list of words
+
+consonant_cluster_list_jp
+ takes: nothing
+ gives: list of consonant clusters from Japanese along with a boolean array
+	denoting whether each consonant cluster is allowed to be at the 
+	beginning, middle, and/or end of a word
+
+vowel_cluster_list_jp
+ takes: nothing
+ gives: list of vowel clusters from Japanese along with a boolean array
+	denoting whether each vowel cluster is allowed to be at the beginning,
+	middle, and/or end of a word
+
+cluster_loader
+ takes: desired word style
+ gives: consonant_cluster_list and vowel_cluster_list
+
+word_builder
+ takes: consonant cluster_list and vowel_cluster_list, desired word length
+	as number of clusters
+ gives: a word of variable length
+ does:  randomly chooses whether to start with a consonant or vowel cluster
+	then randomly pulls an entry from the corresponding list, then it
+	alternates between vowel and consontant clusters. before this point,
+	it chooses whether to end with a vowel or consonant cluster. based
+	on this it adds vowel and consant clusters until the word length is
+	N-1 or N-2 (where N is the desired number of clusters) such that it
+	ends with a vowel or consonant cluster.
+
