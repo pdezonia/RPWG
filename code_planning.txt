@@ -22,19 +22,31 @@ vowel_cluster_list_jp
 	denoting whether each vowel cluster is allowed to be at the beginning,
 	middle, and/or end of a word
 
+forbidden_substrings_jp
+ takes: nothing
+ gives: list of substrings that do not exist in Japanese and a list of
+	substrings to replace them
+
 cluster_loader
  takes: desired word style
- gives: consonant_cluster_list and vowel_cluster_list
+ gives: consonant_cluster_list, vowel_cluster_list, and forbidden substrings
+	and replacements
 
 word_builder
  takes: consonant cluster_list and vowel_cluster_list, desired word length
 	as number of clusters
- gives: a word of variable length
+ gives: a list of strings (clusters) that together make up a word
  does:  randomly chooses whether to start with a consonant or vowel cluster
-	then randomly pulls an entry from the corresponding list, then it
+	randomly pulls an entry from the corresponding list, then it
 	alternates between vowel and consontant clusters. before this point,
 	it chooses whether to end with a vowel or consonant cluster. based
 	on this it adds vowel and consant clusters until the word length is
 	N-1 or N-2 (where N is the desired number of clusters) such that it
 	ends with a vowel or consonant cluster.
+
+word_checker
+ takes: cluster list that makes up a word, list of forbidden substrings and
+	replacements
+ gives: same or modified version of cluster
+ does:  for each forbidden substring, finds and replaces
 
