@@ -13,7 +13,7 @@ ClusterInfo con_cluster_list_test();
 ClusterInfo vow_cluster_list_test();
 
 int main() {
-	std::cout << "Testing cluster loader.\n";
+	std::cout << "Testing cluster lists.\n";
 
 	ClusterInfo consonant_info = con_cluster_list_test();
 	ClusterInfo vowel_info = vow_cluster_list_test();

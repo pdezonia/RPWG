@@ -43,6 +43,18 @@ word_builder
 	on this it adds vowel and consant clusters until the word length is
 	N-1 or N-2 (where N is the desired number of clusters) such that it
 	ends with a vowel or consonant cluster.
+ uses:  get_cluster, find_indices
+
+get_cluster
+ takes: cluster struct and 0-2 int describing whether the cluster should be
+	in the beginning, middle, or end of the word, 3 lists of indices for
+	clusters that can be in the beginning, middle, or end of a word
+ gives: a single string
+
+find_indices
+ takes: vector array of 0,1 flags and column number to scan through
+ gives: vector of row indices where 1's exist
+
 
 word_checker
  takes: cluster list that makes up a word, list of forbidden substrings and
