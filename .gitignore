@@ -1,2 +1,4 @@
-# Ignore compiled c++ code
-*.o
+# Ignore all files
+*
+# Unignore files with extensions
+!*.*
