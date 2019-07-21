@@ -11,13 +11,8 @@ using namespace std;
 
 ClusterInfo con_cluster_list_test()
 {
-	vector<string> con_list = {"s", "d", "f", "sh", "k", "ch"};
-	vector<vector<int>> placement_flags =  {{1, 1, 1},
-						{1, 1, 1},
-						{0, 0, 1},
-						{1, 0, 0},
-						{1, 1, 0},
-						{0, 0, 1}};
+	vector<string> con_list = {"s", "d", "f", "sh", "k", "ch"};	
+	vector<int> placement_flags = {6, 6, 2, 0, 3, 2};
 	// ClusterInfo consonant_info { con_list, placement_flags };
 	ClusterInfo consonant_info;
 	consonant_info.character_clusters = con_list;

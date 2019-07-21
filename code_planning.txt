@@ -12,15 +12,15 @@ main:
 
 consonant_cluster_list_jp
  takes: nothing
- gives: list of consonant clusters from Japanese along with a boolean array
+ gives: list of consonant clusters from Japanese along with a vector
 	denoting whether each consonant cluster is allowed to be at the 
 	beginning, middle, and/or end of a word
 
 vowel_cluster_list_jp
  takes: nothing
- gives: list of vowel clusters from Japanese along with a boolean array
-	denoting whether each vowel cluster is allowed to be at the beginning,
-	middle, and/or end of a word
+ gives: list of vowel clusters from Japanese along with a vector
+	denoting whether each vowel cluster is allowed to be at the 
+	beginning, middle, and/or end of a word
 
 forbidden_substrings_jp
  takes: nothing
@@ -52,8 +52,9 @@ get_cluster
  gives: a single string
 
 find_indices
- takes: vector array of 0,1 flags and column number to scan through
- gives: vector of row indices where 1's exist
+ takes: vector array of integer flags and a vector of ints to to find the
+	indices of
+ gives: vector of row indices where searched for ints exist
 
 
 word_checker

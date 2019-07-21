@@ -20,13 +20,11 @@ int main() {
 	
 	// Unpack consonant clusters and placement array
 	std::vector<std::string> con_list = consonant_info.character_clusters;
-	std::vector<std::vector<int>> consonant_flag_list = 
-					consonant_info.placement_flags;
+	std::vector<int> consonant_flag_list = consonant_info.placement_flags;
 
 	// Unpack vowel clusters and placement array
 	std::vector<std::string> vow_list = vowel_info.character_clusters;
-	std::vector<std::vector<int>> vowel_flag_list = 
-					vowel_info.placement_flags;
+	std::vector<int> vowel_flag_list = vowel_info.placement_flags;
 
 	std::cout << "First consonant entry: " << con_list[0] << "\n";
 	std::cout << "First vowel entry: " << vow_list[0] << "\n";

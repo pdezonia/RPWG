@@ -9,11 +9,7 @@
 ClusterInfo vow_cluster_list_test()
 {
 	std::vector<std::string> vow_list = {"a", "i", "u", "e", "o"};
-	std::vector<std::vector<int>> placement_flags = {{1, 1, 1},
-							 {1, 1, 1},
-							 {1, 1, 0},
-							 {1, 1, 1},
-							 {0, 1, 0}};
+	std::vector<int> placement_flags = {6, 6, 3, 6, 1};
 	ClusterInfo vowel_info { vow_list, placement_flags };
 	return vowel_info;
 }
