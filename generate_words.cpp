@@ -18,7 +18,7 @@ ClusterInfo file_reader(string file_name);
 
 int main() {
     // Declare number of words to generate
-    int num_words = 5;
+    int num_words = 10;
     // Declare target word length as number of clusters
     int word_len = 5;
 
@@ -26,8 +26,8 @@ int main() {
     srand(time(0));
 
     // State names of files to extract language information from
-    string con_file = "japn_simple_con.txt";
-    string vow_file = "japn_simple_vow.txt";
+    string con_file = "youmen_con.txt";
+    string vow_file = "youmen_vow.txt";
 
     // Create receptical cluster info structs 
     ClusterInfo con_clust;
