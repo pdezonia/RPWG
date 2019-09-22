@@ -26,6 +26,7 @@ string word_builder(LanguageInfo lang_info, int word_len) {
 	ClusterInfo con_cluster_info = lang_info.consonant_cluster_info;
 	ClusterInfo vow_cluster_info = lang_info.vowel_cluster_info;
 	// Ignoring substring replacement for now
+	//
 	
 	// Unpack cluster structs
 	// First consonant clusters
@@ -67,7 +68,7 @@ string word_builder(LanguageInfo lang_info, int word_len) {
 
 	// Create flag indicating whether the next desired cluster should be
 	// a vowel
-	int use_vowel = 1- first_clust_is_vowel;
+	int use_vowel = 1 - first_clust_is_vowel;
 	cluster_pos = 1;
 	for (int i = 0; i <= loop_length - 2; i++) {
 		return_word += choose_cluster(lang_info, use_vowel,

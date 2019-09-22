@@ -29,6 +29,6 @@ int main()
     ClusterInfo file_cluster_info;
     file_cluster_info = file_reader(test_file_name);
 
-    cout << file_cluster_info.character_clusters[0] 
-         << file_cluster_info.placement_flags[0] << '\n';
+    cout << file_cluster_info.character_clusters[5] 
+         << file_cluster_info.placement_flags[5] << '\n';
 }
