@@ -23,9 +23,9 @@ using namespace std;
 vector<int> find_indices(vector<int> flag_vect, vector<int> target_inds);
 vector<int> get_flag_codes(int cluster_type);
 
-string get_cluster(ClusterInfo clust_info, int cluster_type) {
+string get_cluster(ClusterInfo clust_info, int cluster_type, int rng_seed) {
 	// Seed random number generator for choosing clusters out of a list
-	srand(time(0));
+	srand(rng_seed);
 	// Unpack cluster struct
 	vector<string> char_clust_vect = clust_info.character_clusters;
 	vector<int> placement_flags = clust_info.placement_flags;
@@ -49,6 +49,6 @@ string get_cluster(ClusterInfo clust_info, int cluster_type) {
 	// Randomly choose entry from resulting list
 	int num_of_potential_clusts = cluster_inds.size();
 	int chosen_ind = (rand() % num_of_potential_clusts);
-	string return_cluster = char_clust_vect[chosen_ind];
+	string return_cluster = char_clust_vect[cluster_inds[chosen_ind]];
 	return return_cluster;
 }

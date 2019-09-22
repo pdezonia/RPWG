@@ -15,13 +15,14 @@
 using namespace std;
 
 // Forward declare functions used
-string get_cluster(ClusterInfo clust_info, int clust_type);
-string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos);
+string get_cluster(ClusterInfo clust_info, int clust_type, int rng_seed);
+string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos, 
+					  int rng_seed);
 
 
-string word_builder(LanguageInfo lang_info, int word_len) {
+string word_builder(LanguageInfo lang_info, int word_len, int rng_seed) {
 	// Seed random number generator
-	srand(time(0));
+	srand(rng_seed);
 	// Unpack language struct
 	ClusterInfo con_cluster_info = lang_info.consonant_cluster_info;
 	ClusterInfo vow_cluster_info = lang_info.vowel_cluster_info;
@@ -64,7 +65,7 @@ string word_builder(LanguageInfo lang_info, int word_len) {
 	// Set the code for cluster position
 	int cluster_pos = 0;
 	string return_word = choose_cluster(lang_info, first_clust_is_vowel, 
-					    cluster_pos);
+					    cluster_pos, rand());
 
 	// Create flag indicating whether the next desired cluster should be
 	// a vowel
@@ -72,13 +73,13 @@ string word_builder(LanguageInfo lang_info, int word_len) {
 	cluster_pos = 1;
 	for (int i = 0; i <= loop_length - 2; i++) {
 		return_word += choose_cluster(lang_info, use_vowel,
-			       		      cluster_pos);
+			       		      cluster_pos, rand());
 		use_vowel = 1 - use_vowel;
 	}
 
 	// Add final cluster
 	cluster_pos = 2;
-	return_word += choose_cluster(lang_info, use_vowel, cluster_pos);
+	return_word += choose_cluster(lang_info, use_vowel, cluster_pos, rand());
 
 	return return_word;
 }

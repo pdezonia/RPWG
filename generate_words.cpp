@@ -13,7 +13,7 @@
 using namespace std;
 
 // Forward declare functions
-string word_builder(LanguageInfo, int);
+string word_builder(LanguageInfo lang_info, int world_length, int rng_seed);
 ClusterInfo file_reader(string file_name);
 
 int main() {
@@ -21,6 +21,9 @@ int main() {
     int num_words = 5;
     // Declare target word length as number of clusters
     int word_len = 5;
+
+    // Seed random number generator
+    srand(time(0));
 
     // State names of files to extract language information from
     string con_file = "japn_simple_con.txt";
@@ -43,7 +46,7 @@ int main() {
 
     // Generate words repeatedly
     for(int i = 0; i < num_words; i++) {
-        new_word = word_builder(lang_info, word_len);
+        new_word = word_builder(lang_info, word_len, rand());
         cout << new_word << "\n";
     }
 

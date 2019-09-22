@@ -15,10 +15,11 @@
 using namespace std;
 
 // Forward declare functions used
-string get_cluster(ClusterInfo clust_info, int clust_type);
+string get_cluster(ClusterInfo clust_info, int clust_type, int rng_seed);
 
 
-string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos) {	
+string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos, 
+					  int rng_seed) {	
 	// Unpack language struct
 	ClusterInfo con_cluster_info = lang_info.consonant_cluster_info;
 	ClusterInfo vow_cluster_info = lang_info.vowel_cluster_info;
@@ -27,10 +28,10 @@ string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos) {
 
 	if(want_vowel == 1) {
 		// Return vowel
-		return_cluster = get_cluster(vow_cluster_info, clust_pos);
+		return_cluster = get_cluster(vow_cluster_info, clust_pos, rng_seed);
 	} else {
 		// Return consonant
-		return_cluster = get_cluster(con_cluster_info, clust_pos);
+		return_cluster = get_cluster(con_cluster_info, clust_pos, rng_seed);
 	}
 
 	return return_cluster;
