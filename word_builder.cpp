@@ -1,5 +1,6 @@
 #include "language_info.h"
 #include "cluster_info.h"
+#include "rpwg_fwd_dec.h"
 
 #include <iostream>
 #include <string>
@@ -13,11 +14,6 @@
  */
 
 using namespace std;
-
-// Forward declare functions used
-string get_cluster(ClusterInfo clust_info, int clust_type, int rng_seed);
-string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos, 
-					  int rng_seed);
 
 
 string word_builder(LanguageInfo lang_info, int word_len, int rng_seed) {

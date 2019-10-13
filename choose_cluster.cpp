@@ -1,5 +1,6 @@
 #include "cluster_info.h"
 #include "language_info.h"
+#include "rpwg_fwd_dec.h"
 
 #include <string>
 #include <vector>
@@ -13,9 +14,6 @@
  */
 
 using namespace std;
-
-// Forward declare functions used
-string get_cluster(ClusterInfo clust_info, int clust_type, int rng_seed);
 
 
 string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos, 

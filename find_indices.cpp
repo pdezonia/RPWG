@@ -1,3 +1,5 @@
+#include "rpwg_fwd_dec.h"
+
 #include <iostream>
 #include <string>
 #include <vector>

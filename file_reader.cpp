@@ -1,4 +1,5 @@
 #include "cluster_info.h"
+#include "rpwg_fwd_dec.h"
 
 #include <iostream>
 #include <string>
@@ -49,7 +50,7 @@ ClusterInfo file_reader(string file_name)
         if(this_line.size() > 0)
         {
             line_elements = string_splitter(this_line, delimiter);
-            // Add cluster
+            // Add cluster to end of vector
             clusters.push_back(line_elements[0]);
             // Add its placement flag
             placement_flags.push_back(stoi(line_elements[1]));

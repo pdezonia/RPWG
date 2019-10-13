@@ -1,5 +1,6 @@
 #include "language_info.h"
 #include "cluster_info.h"
+#include "rpwg_fwd_dec.h"
 
 #include <iostream>
 #include <string>
@@ -13,8 +14,8 @@
 using namespace std;
 
 // Forward declare functions
-string word_builder(LanguageInfo lang_info, int world_length, int rng_seed);
-ClusterInfo file_reader(string file_name);
+// string word_builder(LanguageInfo lang_info, int world_length, int rng_seed);
+// ClusterInfo file_reader(string file_name);
 
 int main() {
     // Declare number of words to generate

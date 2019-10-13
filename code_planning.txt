@@ -56,10 +56,20 @@ find_indices
 	indices of
  gives: vector of row indices where searched for ints exist
 
-
 word_checker
  takes: cluster list that makes up a word, list of forbidden substrings and
 	replacements
  gives: same or modified version of cluster
  does:  for each forbidden substring, finds and replaces
 
+generate_words
+ takes: nothing, is a main function
+ gives: list of words from a desired language
+ does:  reads a text file for clusters and calls word_builder multiple times
+ uses:  world_builder, file_reader
+
+file_reader
+ takes: name of file containing list of vowel or consonant clusters
+ gives: ClusterInfo struct
+ does:  reads lines of text file and parses cluster content and metadata
+ uses:  string_splitter
