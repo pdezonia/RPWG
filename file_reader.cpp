@@ -13,8 +13,6 @@
 
 using namespace std;
 
-// Forward declare functions
-vector<string> string_splitter(string chunk, char delimiter);
 
 ClusterInfo file_reader(string file_name)
 {

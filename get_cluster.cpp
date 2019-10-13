@@ -20,9 +20,6 @@
 
 using namespace std;
 
-// Forward declare functions used
-// vector<int> find_indices(vector<int> flag_vect, vector<int> target_inds);
-// vector<int> get_flag_codes(int cluster_type);
 
 string get_cluster(ClusterInfo clust_info, int cluster_type, int rng_seed) {
     // Seed random number generator for choosing clusters out of a list

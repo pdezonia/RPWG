@@ -9,8 +9,9 @@
 
 using namespace std;
 
-// Fowrward declare all functions used 
+// Fowrward declare all functions used
 ClusterInfo file_reader(string file_name);
+vector<string> string_splitter(string chunk, char delimiter);
 string word_builder(LanguageInfo lang_info, int word_len, int rng_seed);
 string choose_cluster(LanguageInfo lang_info, int want_vowel, int clust_pos, 
                       int rng_seed);
