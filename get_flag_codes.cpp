@@ -12,18 +12,23 @@
 
 using namespace std;
 
-vector<int> get_flag_codes(int cluster_type) {
+vector<int> get_flag_codes(int cluster_type) 
+{
 	vector<int> target_flags;
 	int beginning_code = 0;
 	int middle_code = 1;
 	int end_code = 2;
-	if(cluster_type == beginning_code) {
+	if(cluster_type == beginning_code) 
+	{
 		target_flags = {0, 3, 4, 6};
-	} else if(cluster_type == middle_code) {
+	} else if(cluster_type == middle_code) 
+	{
 		target_flags = {1, 3, 5, 6};
-	} else if(cluster_type == end_code) {
+	} else if(cluster_type == end_code) 
+	{
 		target_flags = {2, 4, 5, 6};
-	} else {
+	} else 
+	{
 		cout << "ERROR, get_flag_inds: Incorrect cluster_type.\n";
 		target_flags = {-1};
 	}

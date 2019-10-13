@@ -16,12 +16,16 @@ vector<string> string_splitter(string chunk, char delimiter)
     string token_1;
     string token_2;
 
+    // Used to signify end of line, allows for multiple calls of this function
+    // to break up a line multiple times.
+    char end_of_line = '\n';
+
     stringstream ss;
     ss << chunk;
     // Get first part of string
     getline(ss, token_1, delimiter);
     // Get second part of string
-    getline(ss, token_2, delimiter);
+    getline(ss, token_2, end_of_line);
 
     vector<string> ret_vec = {token_1, token_2};
     return ret_vec;

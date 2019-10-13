@@ -22,11 +22,15 @@ using namespace std;
 
 
 string get_cluster(ClusterInfo clust_info, int cluster_type, int rng_seed) {
+    // Declare dice number of sides
+    int dice_max = 10;
+
     // Seed random number generator for choosing clusters out of a list
     srand(rng_seed);
 	// Unpack cluster struct
 	vector<string> char_clust_vect = clust_info.character_clusters;
 	vector<int> placement_flags = clust_info.placement_flags;
+    vector<int> frequency_scores = clust_info.frequency_scores;
 
 	// Test getting an index list
 	/*
@@ -40,13 +44,26 @@ string get_cluster(ClusterInfo clust_info, int cluster_type, int rng_seed) {
 	vector<int> target_flags;
 	target_flags = get_flag_codes(cluster_type);
 
-	// Get list of indices with clusters of type demanded by
+	// Get list of indices with clusters of position type demanded by
 	// calling function
-	vector<int> cluster_inds = find_indices(placement_flags, target_flags);
+	vector<int> inds_by_pos = find_indices(placement_flags, target_flags);
+
+    // Get list of indices of clusters with frequency score in excess of
+    // dice roll
+    int dice_roll = (rand() % dice_max);
+    vector<int> inds_by_freq = filter_by_freq(frequency_scores, dice_roll);
+
+    // cout << frequency_scores.size() << "\n";
+    // cout << dice_roll << inds_by_freq.size() << "\n";
+
+    // Calculate intersection of two lists to determine which clusters we
+    // can pick from
+    vector<int> final_inds = calc_intersection(inds_by_pos, inds_by_freq);
+    // cout << final_inds[0] << "\n";
 
 	// Randomly choose entry from resulting list
-	int num_of_potential_clusts = cluster_inds.size();
-	int chosen_ind = (rand() % num_of_potential_clusts);
-	string return_cluster = char_clust_vect[cluster_inds[chosen_ind]];
+	int num_of_potential_clusts = final_inds.size();
+	int meta_ind = (rand() % num_of_potential_clusts);
+	string return_cluster = char_clust_vect[final_inds[meta_ind]];
 	return return_cluster;
 }

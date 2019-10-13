@@ -6,7 +6,8 @@
 #include <vector>
 #include <string>
 
-struct LanguageInfo {
+struct LanguageInfo 
+{
 	ClusterInfo consonant_cluster_info;
 	ClusterInfo vowel_cluster_info;
 	// 2-D array of substrings, first column is a list of substrings 

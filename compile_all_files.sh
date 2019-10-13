@@ -15,7 +15,9 @@ echo Start RPWG project
 # g++ -o cluster_file_loading_tester cluster_file_loading_tester.cpp string_splitter.cpp file_reader.cpp
 
 echo Compiling Word List Generator
-g++ -o word_list_generator generate_words.cpp word_builder.cpp get_cluster.cpp find_indices.cpp get_flag_codes.cpp choose_cluster.cpp file_reader.cpp string_splitter.cpp
+g++ -o word_list_generator generate_words.cpp word_builder.cpp get_cluster.cpp \
+find_indices.cpp filter_by_freq.cpp get_flag_codes.cpp choose_cluster.cpp \
+file_reader.cpp string_splitter.cpp calc_intersection.cpp
 
 echo Done
 

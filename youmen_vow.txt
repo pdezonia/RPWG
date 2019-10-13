@@ -1,50 +1,25 @@
-a	6
-i	6
-e	6
-u	6
-o	6
-a	6
-i	6
-e	6
-u	6
-o	6
-a	6
-i	6
-e	6
-u	6
-o	6
-a	6
-i	6
-e	6
-u	6
-o	6
-a	6
-i	6
-e	6
-u	6
-o	6
-a	6
-i	6
-e	6
-u	6
-o	6
-ai	6
-ae	3
-au	6
-ao	5
-ia	5
-ie	1
-iu	1
-io	5
-ea	6
-ei	1
-eu	1
-eo	5
-ua	1
-ui	1
-ue	5
-uo	3
-oa	2
-oi	5
-oe	7
-ou	5
+a	6	10
+i	6	10
+e	6	10
+u	6	10
+o	6	10
+ai	6	2
+ae	3	0
+au	6	0
+ao	5	0
+ia	5	1
+ie	1	0
+iu	1	0
+io	5	0
+ea	6	0
+ei	1	1
+eu	1	0
+eo	5	0
+ua	1	0
+ui	1	0
+ue	5	0
+uo	3	0
+oa	2	0
+oi	5	1
+oe	7	0
+ou	5	0
