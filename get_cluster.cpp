@@ -50,7 +50,7 @@ string get_cluster(ClusterInfo clust_info, int cluster_type, int rng_seed) {
 
     // Get list of indices of clusters with frequency score in excess of
     // dice roll
-    int dice_roll = (rand() % dice_max);
+    int dice_roll = (rand() % (dice_max - 1)) + 1;
     vector<int> inds_by_freq = filter_by_freq(frequency_scores, dice_roll);
 
     // cout << frequency_scores.size() << "\n";

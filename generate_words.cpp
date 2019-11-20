@@ -25,8 +25,8 @@ int main()
     srand(time(0));
 
     // State names of files to extract language information from
-    string con_file = "youmen_con.txt";
-    string vow_file = "youmen_vow.txt";
+    string con_file = "human_con.txt";
+    string vow_file = "human_vow.txt";
 
     // Create receptical cluster info structs 
     ClusterInfo con_clust;
